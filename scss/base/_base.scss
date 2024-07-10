@@ -1,0 +1,25 @@
+
+* {
+  scroll-behavior: smooth;
+  font-family: 'Tajawal', sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: $white-color;
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $second-color;
+  }
+}

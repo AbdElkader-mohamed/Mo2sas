@@ -1,0 +1,78 @@
+/*-------
+  contact 
+----------*/
+
+.contact {
+  .contact_box{
+    background: $white-color;
+    @include responsive(max,992px) {
+      margin-bottom: 30px;
+    }
+    box-shadow: 0 0 40px rgba(226, 200, 191, 0.4);
+    z-index: 1;
+    padding: 10px;
+    .service_inner{
+    display: flex;
+    align-items: center;
+    border: 1px solid  rgba($primary-color,0.4);
+    padding: 20px;
+    .content{
+      margin-#{$s}: 20px;
+      flex: 1;
+      transition: all 0.5s ease;
+      z-index: 4;
+      h4{
+        font-weight: $fw-500;
+        font-size: $font-24;
+        line-height: 24px;
+        color: $second-color;
+        margin-bottom: 12px;
+      }
+      p{
+        font-weight:  $fw-500;
+        font-size: $font-14;
+        line-height: 24px;
+        color: $primary-color;
+      }
+    }
+    .image{
+      img{
+        width: 100px;
+        height: 100px;
+        filter: invert(59%) sepia(15%) saturate(3650%) hue-rotate(356deg) brightness(101%) contrast(93%);
+        opacity: .6;
+      }
+    }
+    }
+  }
+  form {
+    h2 {
+      color: $white-color;
+      font-size: $font-36;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+      margin-top: 100px;
+      padding: 30px;
+      @include responsive(max,1200px) {
+        margin-top: 50px;
+      }
+      @include responsive(max,575px) {
+        padding: 16px;
+      }
+      box-shadow: 0px 0px 70px 0px rgba(0,0,0,0.10);
+      border-radius: 10px;
+      background-color: rgba($primary-color, 0.6);
+      textarea,
+      input:not(input[type="submit"]) {
+        color: $second-color;
+        background-color:  rgba($white-color, 0.5) !important;
+        &::placeholder {
+        color: $second-color;
+        }
+      }
+      input[type="submit"] {
+        color: $white-color;
+      }
+  }
+}

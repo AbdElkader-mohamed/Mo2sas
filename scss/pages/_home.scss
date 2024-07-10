@@ -1,0 +1,11 @@
+
+section {
+  &:not(&:last-of-type) {
+    margin-bottom: 20px;
+  }
+  @include responsive(min,575px){
+    &:not(&:last-of-type) {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,234 @@
+
+/*------------
+  header
+------------*/ 
+.header {
+  
+  &__top {
+    background-color: rgba($primary-color,0.8);
+    padding: 16px 0;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      @include responsive(max, 576px) {
+        justify-content: center;
+      }
+
+      &__social-icons {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &__box {
+          height: 32px;
+          width: 32px;
+          border: 1px solid $white-color;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.5s;
+
+          &__icon {
+          transition: all 0.5s;
+          color: $white-color;
+          font-size: 16px;
+          }
+
+          &:hover {
+            border-color: $second-color;
+
+            .header__top__content__social-icons__box__icon {
+              color: $second-color;
+              }
+          }
+        }
+        @include responsive(max, 576px) {
+              width: 100%;
+              justify-content: center;
+        }
+      }
+
+        &__links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            &__box {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+              &__icons {
+                height: 32px;
+                width: 32px;
+                border: 1px solid $white-color;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &__icon {
+                      color: $white-color;
+                      font-size: 16px;
+                }
+              }
+
+              &__content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4px;
+                color: $white-color;
+                font-size: 16px;
+                &__link {
+                  color: $white-color;
+                  &:hover {
+                    color: $second-color;
+                  }
+                }
+              }
+            }
+
+            @include responsive(max, 576px) {
+              width: 100%;
+              justify-content: center;
+            }
+        }
+    }
+  }
+
+  &__nav {
+    background-color: $second-color;
+
+    .navbar {
+      padding: 0;
+
+      .navbar-brand {
+        position: relative;
+        height: 70px;
+        width: 153px;
+        &__link {
+          position: absolute;
+          top: 0;
+          background-color: $primary-color;
+          margin: 0;
+          padding: 10px;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+          z-index: 100;
+          &__logo {
+            height: 120px;
+            width: 120px;
+          }
+        }
+      }
+      .offcanvas {
+        &-body {
+          align-items: center;
+          .navbar-nav {
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin: 0 16px;
+            .nav-item {
+              position: relative;
+              .nav-link {
+                display: block;
+                padding: 8px 0;
+                font-size: 16px;
+                font-weight: 400;
+                color: $white-color;
+                text-transform: uppercase;
+                position: relative;
+                &.active {
+                  color: $primary-color !important;
+                  font-weight: bold;
+                }
+                &:hover {
+                  color: $primary-color !important;
+                }
+                @include responsive(max, 991px) {
+                  text-align: center;
+                  color: $black-color;
+                    width: fit-content;
+                    margin: auto;
+                }
+                &::before {
+                  content: "";
+                  position: absolute;
+                  transition: 300ms;
+                  height: 3px;
+                  width: 0%;
+                  bottom: 0;
+                  background-color: $primary-color;
+                }
+                &.active::before,
+                &:hover::before {
+                  width: 100%;
+                }
+                
+              }
+              .submenu {
+                background-color: $white-color;
+                z-index: 9;
+                overflow: hidden;
+                border-radius: 8px 0 8px 8px ;
+                @include responsive(max,992px ){
+                  border-radius: 0;
+                }
+                @include responsive(min,992px ){
+                  transition: all .3s cubic-bezier(.4,0,.2,1);
+                  position: absolute;
+                  visibility: hidden;
+                  opacity: 0;
+                  top:calc(100% + 10px);
+                }
+                &__item {
+                  transition:background 0.5s ease-in-out ;
+                  &:hover {
+                    background: rgba($primary-color,0.5);
+                  }
+                  &__link {
+                    display: block;
+                    padding: 10px 20px;
+                    white-space: nowrap;
+                    color: $second-color;
+                    font-size: $font-17;
+                    font-weight: 500;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                  }
+                }
+              }
+              &:hover .submenu {
+                visibility: visible;
+                opacity: 1;
+                top: 100%;
+              }
+            }
+          }
+        }
+
+              &-header {
+                  .btn-close {
+                      box-shadow: none;
+                  }
+              }
+      }
+    }
+
+    .navbar-toggler {
+      box-shadow: none;
+      .navbar-toggler-icon {
+        filter: invert(99%) sepia(0%) saturate(310%) hue-rotate(280deg) brightness(115%) contrast(100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/*-------
+  button
+----------*/
+
+.main-btn {
+  display: block;
+  text-align: center;
+  font-size: $font-22;
+  font-weight: $fw-500;
+  color: $primary-color ;
+  background:rgba($primary-color,0.1) ;
+  padding: 10px 30px;
+  margin: auto;
+  border-radius: 25px;
+  border: 1px solid $primary-color;
+  transition: background 0.4s , color 0.4s;
+  &:hover {
+    background: $primary-color ;
+    color: $white-color;
+  }
+}

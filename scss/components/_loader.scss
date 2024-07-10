@@ -1,0 +1,62 @@
+/*------------
+  preloader
+------------*/ 
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color:$white-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: all 1s ease;
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+    width: 0%;
+  }
+  .preloader-inner {
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .spinner {
+      animation: spinner 1s infinite linear;
+      border-radius: 50%;
+      border: 3px solid $primary-color;
+      border-top-color: $second-color;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 3.5em auto;
+    }
+    .navbar-brand__link {
+      width: 200px;
+    }
+  }
+}
+
+/* Animation of the preloader */
+@include keyFrames(spinner) {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* Animation of letters loading from the preloader */
+@include keyFrames(characters) {
+  0%,
+  75%,
+  100% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  25%,
+  50% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}

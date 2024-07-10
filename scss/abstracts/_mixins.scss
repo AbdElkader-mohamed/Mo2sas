@@ -1,0 +1,55 @@
+
+// responsive media 
+
+@mixin responsive($type,$size) {
+  @media (#{$type}-width: $size) {
+    @content;
+  }
+}
+
+// main animation 
+
+@mixin keyFrames($name){
+  @keyframes #{$name} {
+    @content
+  }
+}
+
+// animation bing
+@mixin play($arg) {
+  display: block;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    #{$s}: 50%;
+    border: {
+      style:solid;
+      color:transparent;
+    }
+    @if $s == left {
+      border-width:20px 0 20px 34.6px;
+    }
+    @else {
+      margin-right: -17px;
+      border-width:20px 34.6px 20px 0;
+    }
+  border-#{$s}-color:$primary-color ;
+  }
+  &::after {
+    content: '';
+    width: 100px ;
+    height: 100px;
+    border-radius: 50%;
+    z-index: -1;
+    position: absolute;
+    background: $primary-color;
+    top: $arg;
+    right: -60px;
+    opacity: .5;
+    animation: ping .8s ease-in-out infinite both;
+  }
+}

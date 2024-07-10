@@ -1,0 +1,68 @@
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+color: $second-color;
+
+}
+.form-control:focus,
+.btn:focus{
+  box-shadow: none;
+}
+
+section {
+  overflow: hidden;
+  padding: 55px 0;
+
+  @include responsive(max, 992px) {
+    padding: 25px 0;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  object-fit: contain;
+}
+
+textarea:focus,
+input:focus {
+  outline-color: $second-color;
+  border-color:$second-color !important;
+  box-shadow: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: capitalize;
+  color: $second-color;
+  line-height: 1;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+h1{
+  font-size: 128px;
+}
+h2{
+  font-size: 72px;
+}
+h3{
+  font-size: 44px;
+}
+h4{
+  font-size: 36px;
+}
+h5{
+  font-size: 18px;
+}
+h6{
+  font-size: 16px;
+}
+
+

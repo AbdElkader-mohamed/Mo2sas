@@ -1,0 +1,42 @@
+/*-------------
+  question-answer 
+-----------------*/ 
+
+.question-answer  {
+  &__body {
+    margin-top: 30px;
+    &__box {
+      margin-bottom: 30px;
+      counter-increment:counter-s ١;
+      &__question {
+        font-size: $font-48;
+        font-weight: $fw-600;
+        color: $primary-color;
+        margin-bottom: 30px;
+        @include responsive(max,1200px ) {
+          font-size: $font-36;
+          margin-bottom: 20px;
+        }
+        @include responsive(max,768px ) {
+          font-size: $font-30;
+        }
+        &::before {
+          content: counter(counter-s) "س : ";
+        }
+      }
+      &__answer {
+        font-size: $font-22;
+        font-weight: $fw-500;
+        margin-bottom: 30px;
+        color: rgba($second-color, 0.6);
+        counter-increment:counter-g ١;
+        @include responsive(max,768px ) {
+          font-size: $font-18;
+        }
+        &::before {
+          content: counter(counter-g) "ج : ";
+        }
+      }
+    }
+  }
+}

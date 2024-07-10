@@ -1,0 +1,49 @@
+/*------------
+  accordion
+---------------*/ 
+
+.accordion-item {
+  margin-bottom: 20px;
+    &:first-of-type {
+      border-radius: 0;
+      .accordion-button {
+        border-radius:0 ;
+      }
+    }
+    &:last-of-type {
+      border-radius: 0;
+      .accordion-button {
+        border-radius:0 ;
+      }
+    }
+    .accordion-button {
+      color:$primary-color ;
+      font-weight: $fw-500;
+      font-size:$font-48;
+      @include responsive(max,1200px) {
+        font-size:$font-36;
+      }
+      @include responsive(max,992px) {
+        font-size:$font-28;
+      }
+      @include responsive(max,768px) {
+        font-size:$font-22;
+      }
+      box-shadow: none;
+      &::after {
+        margin-#{$s}:auto ;
+        margin-left: 0;
+        filter: invert(62%) sepia(17%) saturate(5421%) hue-rotate(356deg) brightness(100%) contrast(94%);
+      }
+    &:not(.collapsed) {
+      background-color: $second-color;
+    }
+    }
+    .accordion-body {
+      font-size: 22px;
+      @include responsive(max,768px){
+        font-size: 18px;
+
+      }
+    }
+  }

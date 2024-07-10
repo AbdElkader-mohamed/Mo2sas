@@ -1,0 +1,40 @@
+
+// whatsapp-icon 
+.social-icon {
+  position: fixed;
+  #{$s}: 20px;
+  z-index: 10;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  box-shadow: 0 2px 5px #00000042;
+  &.whatsapp {
+    bottom: 100px;
+    background-color: #41b083;
+    i{
+      font-size: 30px;
+      color: $white-color;
+    }
+  }
+  &.livechat {
+  bottom: 100px;
+  background-color: $primary-color;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  }
+}
+.section-title {
+  text-align:center;
+  margin-bottom: 50px;
+  h2 {
+    font-size:65px;
+  }
+}
+.main-text {
+  font-size: $font-20;
+}
+
